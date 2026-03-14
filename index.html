@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CozyLiving Furniture | Elegant Living</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- html2canvas for receipt image -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Elegant Preloader -->
+    <div id="preloader">
+        <div class="glitter-container" id="glitterContainer"></div>
+        <div class="loader-content">
+            <div class="loader-logo">CozyLiving<span>.</span></div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Hidden Receipt Template for Image Generation -->
+    <div id="receiptTemplate" class="receipt-hidden">
+        <div class="shopee-receipt">
+            <div class="receipt-header">
+                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                <h2>Pesanan Berhasil!</h2>
+                <p class="receipt-id" id="receiptId">TRX-20260314001</p>
+            </div>
+            <div class="receipt-body">
+                <div class="info-row">
+                    <span>Waktu Pembayaran</span>
+                    <span id="receiptTime">14 Mar 2026, 14:40</span>
+                </div>
+                <div class="info-row">
+                    <span>Nama Pelanggan</span>
+                    <span id="receiptName">Cikal Munazat</span>
+                </div>
+                <hr class="dashed-line">
+                <div id="receiptItems">
+                    <!-- Items will be injected here -->
+                </div>
+                <hr class="dashed-line">
+                <div class="total-row">
+                    <span>Total Pembayaran</span>
+                    <span class="total-price" id="receiptTotal">Rp 3.500.000</span>
+                </div>
+            </div>
+            <div class="receipt-footer">
+                <p>Terima kasih telah berbelanja di</p>
+                <h3 class="brand-logo">CozyLiving<span>.</span></h3>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="logo">CozyLiving<span>.</span></div>
+        <div class="nav-links-container" id="navMobileMenu">
+            <div class="mobile-menu-header">
+                <div class="logo">CozyLiving<span>.</span></div>
+                <div class="close-mobile-menu" id="closeMobileMenu">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <span class="menu-label">MENU</span>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#products">Koleksi</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <a href="#products" class="mobile-cta-btn">Belanja Sekarang</a>
+        </div>
+        <div class="nav-actions">
+            <div class="cart-icon" id="cartToggle">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="hamburger" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Keranjang Pesanan</h3>
+            <i class="fas fa-times close-cart" id="closeCart"></i>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalAmount">Rp 0</span>
+            </div>
+            <button class="checkout-btn" id="openCheckout">Checkout Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ringkasan Pesanan</h2>
+                <i class="fas fa-times close-modal" id="closeModal"></i>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" required placeholder="Contoh: John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" required placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor WhatsApp</label>
+                        <input type="tel" id="phone" required placeholder="Contoh: 081234567890">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat Pengiriman</label>
+                        <textarea id="address" required placeholder="Alamat lengkap tujuan pengiriman"></textarea>
+                    </div>
+                    <div class="order-summary-list" id="orderSummary">
+                        <!-- Summary injected by JS -->
+                    </div>
+                    <button type="submit" class="place-order-btn">Konfirmasi Pesanan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal (Shopee Style) -->
+    <div class="modal-overlay" id="productDetailModal">
+        <div class="product-detail-modal">
+            <i class="fas fa-times close-detail" id="closeDetail"></i>
+            <div class="detail-container">
+                <div class="detail-gallery">
+                    <div class="main-img-container">
+                        <i class="fas fa-chevron-left gallery-arrow prev" id="prevImg"></i>
+                        <img id="detailMainImg" src="" alt="">
+                        <i class="fas fa-chevron-right gallery-arrow next" id="nextImg"></i>
+                    </div>
+                    <div class="thumb-grid" id="detailThumbs">
+                        <!-- Thumbs injected by JS -->
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <h2 id="detailTitle"></h2>
+                    <div class="detail-rating">
+                        <div class="stars" id="detailStars"></div>
+                        <span class="rating-num" id="detailRatingNum"></span>
+                        <span class="sold-count">| Terjual 100+</span>
+                    </div>
+                    <div class="detail-price" id="detailPrice"></div>
+                    
+                    <div class="detail-description">
+                        <h3>Deskripsi Produk</h3>
+                        <p id="detailDesc"></p>
+                    </div>
+
+                    <div class="detail-actions">
+                        <button class="back-btn-detail" id="closeDetailBtn">
+                            <i class="fas fa-arrow-left"></i> Kembali
+                        </button>
+                        <button class="add-to-cart-big" id="detailAddToCart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                        <button class="buy-now-big" id="detailBuyNow">Beli Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Wujudkan Rumah <span>Impianmu</span></h1>
+            <p>Temukan koleksi furniture premium dengan desain modern yang elegan untuk setiap sudut ruangan Anda.</p>
+            <a href="#products" class="btn">Lihat Koleksi</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Filosofi CozyLiving</h2>
+                <p>CozyLiving lahir dari sebuah mimpi sederhana: menghadirkan kehangatan di setiap rumah melalui furniture yang tidak hanya indah dipandang, tetapi juga nyaman ditinggali. Kami percaya bahwa rumah adalah tempat di mana cerita dimulai, dan kami bangga menjadi bagian dari cerita Anda.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>5+</h3>
+                        <p>Tahun Pengalaman</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1.000+</h3>
+                        <p>Proyek Selesai</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Kualitas Terjamin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Timeline Section -->
+    <section class="history">
+        <div class="section-header">
+            <h2>Perjalanan Kami</h2>
+            <p>Dari garasi kecil hingga menjadi pilihan utama keluarga Indonesia.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h3>Awal Perjalanan</h3>
+                    <p>CozyLiving resmi berdiri di sebuah garasi kecil dengan fokus pada pembuatan kursi kayu custom yang dikerjakan dengan tangan sendiri.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2021</div>
+                <div class="timeline-content">
+                    <h3>Bertahan di Masa Sulit</h3>
+                    <p>Mulai merambah ke platform digital untuk menjangkau pelanggan yang lebih luas di seluruh Indonesia.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023</div>
+                <div class="timeline-content">
+                    <h3>Ekspansi Galeri</h3>
+                    <p>Membuka showroom pertama kami di Jakarta Selatan dan memperluas koleksi mulai dari ruang tamu hingga kamar tidur.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2026</div>
+                <div class="timeline-content">
+                    <h3>Masa Kini & Sukses</h3>
+                    <p>Kini telah melayani lebih dari 1.000 pelanggan dan terus berkomitmen menghadirkan furniture premium yang terjangkau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Koleksi Unggulan Kami</h2>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="kursi">Kursi</button>
+            <button class="filter-btn" data-filter="lemari">Lemari</button>
+            <button class="filter-btn" data-filter="meja">Meja</button>
+            <button class="filter-btn" data-filter="rak">Rak</button>
+            <button class="filter-btn" data-filter="sofa">Sofa</button>
+            <button class="filter-btn" data-filter="tempat-tidur">Tempat Tidur</button>
+            <button class="filter-btn" data-filter="lainnya">Lainnya</button>
+        </div>
+        
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be injected by JavaScript -->
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>CozyLiving<span>.</span></h3>
+                <p>Kemewahan yang nyaman dalam setiap detail untuk hunian Anda.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#products">Koleksi</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-envelope"></i> info@luminafurniture.com</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CozyLiving. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
