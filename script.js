@@ -5,11 +5,11 @@ const products = [
         name: 'GrandSeater Lounge',
         brand: 'GrandSeater',
         price: 'Rp 2.902.220',
-        image: 'public/chair_grandseater_1773469259546.png',
+        image: 'assets/chair_grandseater_1773469259546.png',
         images: [
-            'public/chair_grandseater_1773469259546.png', 
-            'public/chair_grandseater_angle2_1773476035023.png', 
-            'public/chair_grandseater_1773469259546.png'
+            'assets/chair_grandseater_1773469259546.png', 
+            'assets/chair_grandseater_angle2_1773476035023.png', 
+            'assets/chair_grandseater_1773469259546.png'
         ],
         description: 'Kursi lounge premium dengan bantal empuk dan rangka kokoh. Didesain secara ergonomis untuk memberikan kenyamanan maksimal setelah hari yang panjang.',
         rating: 4.8,
@@ -21,11 +21,11 @@ const products = [
         name: 'CabinetPro Storage',
         brand: 'CabinetPro',
         price: 'Rp 1.681.940',
-        image: 'public/cabinet_cabinetpro_1773469275316.png',
+        image: 'assets/cabinet_cabinetpro_1773469275316.png',
         images: [
-            'public/cabinet_cabinetpro_1773469275316.png', 
-            'public/cabinet_cabinetpro_angle2_1773476050602.png', 
-            'public/cabinet_cabinetpro_1773469275316.png'
+            'assets/cabinet_cabinetpro_1773469275316.png', 
+            'assets/cabinet_cabinetpro_angle2_1773476050602.png', 
+            'assets/cabinet_cabinetpro_1773469275316.png'
         ],
         description: 'Lemari penyimpanan minimalis dengan material kayu premium. Memiliki banyak kompartemen untuk merapikan barang-barang Anda dengan gaya.',
         rating: 4.7,
@@ -37,11 +37,11 @@ const products = [
         name: 'DeskPrime Workstation',
         brand: 'DeskPrime',
         price: 'Rp 1.140.990',
-        image: 'public/table_deskprime_1773469295215.png',
+        image: 'assets/table_deskprime_1773469295215.png',
         images: [
-            'public/table_deskprime_1773469295215.png', 
-            'public/table_deskprime_angle2_1773476069864.png', 
-            'public/table_deskprime_1773469295215.png'
+            'assets/table_deskprime_1773469295215.png', 
+            'assets/table_deskprime_angle2_1773476069864.png', 
+            'assets/table_deskprime_1773469295215.png'
         ],
         description: 'Meja kerja modern dengan fitur kabel management. Luas dan kokoh, sangat cocok untuk mendukung produktivitas kerja Anda di rumah.',
         rating: 4.9,
@@ -53,11 +53,11 @@ const products = [
         name: 'TitanRack Modular',
         brand: 'TitanRack',
         price: 'Rp 2.803.970',
-        image: 'public/shelf_titanrack_1773469312791.png',
+        image: 'assets/shelf_titanrack_1773469312791.png',
         images: [
-            'public/shelf_titanrack_1773469312791.png', 
-            'public/shelf_titanrack_angle2_1773476088610.png', 
-            'public/shelf_titanrack_1773469312791.png'
+            'assets/shelf_titanrack_1773469312791.png', 
+            'assets/shelf_titanrack_angle2_1773476088610.png', 
+            'assets/shelf_titanrack_1773469312791.png'
         ],
         description: 'Rak modular yang dapat disesuaikan dengan kebutuhan ruang Anda. Terbuat dari metal berdaya tahan tinggi dengan sentuhan akhir industrial.',
         rating: 4.6,
@@ -69,11 +69,11 @@ const products = [
         name: 'GrandLuxe Sectional',
         brand: 'GrandLuxe',
         price: 'Rp 2.861.100',
-        image: 'public/sofa_grandluxe_1773469329405.png',
+        image: 'assets/sofa_grandluxe_1773469329405.png',
         images: [
-            'public/sofa_grandluxe_1773469329405.png', 
-            'public/sofa_grandluxe_angle2_1773476105227.png', 
-            'public/sofa_grandluxe_1773469329405.png'
+            'assets/sofa_grandluxe_1773469329405.png', 
+            'assets/sofa_grandluxe_angle2_1773476105227.png', 
+            'assets/sofa_grandluxe_1773469329405.png'
         ],
         description: 'Sofa mewah dengan bahan velvet kualitas ekspor. Empuk dan lega, menjadikannya pusat perhatian yang sempurna untuk ruang tamu Anda.',
         rating: 4.8,
@@ -85,11 +85,11 @@ const products = [
         name: 'SleepEZ King Bed',
         brand: 'SleepEZ',
         price: 'Rp 1.614.590',
-        image: 'public/bed_sleepez_1773469346855.png',
+        image: 'assets/bed_sleepez_1773469346855.png',
         images: [
-            'public/bed_sleepez_1773469346855.png', 
-            'public/bed_sleepez_angle2_new_v2_1773478154229.png', 
-            'public/bed_sleepez_1773469346855.png'
+            'assets/bed_sleepez_1773469346855.png', 
+            'assets/bed_sleepez_angle2_new_v2_1773478154229.png', 
+            'assets/bed_sleepez_1773469346855.png'
         ],
         description: 'Rangka tempat tidur berbahan kayu solid yang dirancang untuk stabilitas maksimal. Memberikan dukungan sempurna untuk tidur yang lebih nyenyak.',
         rating: 4.9,
@@ -101,11 +101,11 @@ const products = [
         name: 'Nordic Accent Chair',
         brand: 'GrandSeater',
         price: 'Rp 4.250.000',
-        image: 'public/chair_luxe_1773471881677.png',
+        image: 'assets/chair_luxe_1773471881677.png',
         images: [
-            'public/chair_luxe_1773471881677.png', 
-            'public/chair_nordic_angle2_1773477226019.png', 
-            'public/chair_luxe_1773471881677.png'
+            'assets/chair_luxe_1773471881677.png', 
+            'assets/chair_nordic_angle2_1773477226019.png', 
+            'assets/chair_luxe_1773471881677.png'
         ],
         description: 'Kursi aksen dengan desain Nordic yang elegan. Material kulit sintetis premium dengan kaki kayu solid yang kokoh.',
         rating: 5.0,
@@ -117,8 +117,8 @@ const products = [
         name: 'Marble Dining Table',
         brand: 'DeskPrime',
         price: 'Rp 6.800.000',
-        image: 'public/table_marble_1773471897546.png',
-        images: ['public/table_marble_1773471897546.png', 'public/table_marble_1773471897546.png', 'public/table_marble_1773471897546.png'],
+        image: 'assets/table_marble_1773471897546.png',
+        images: ['assets/table_marble_1773471897546.png', 'assets/table_marble_1773471897546.png', 'assets/table_marble_1773471897546.png'],
         description: 'Meja makan mewah dengan permukaan marmer asli. Desain bundar yang memberikan kesan hangat dan akrab saat berkumpul.',
         rating: 4.9,
         stock: 2
@@ -129,8 +129,8 @@ const products = [
         name: 'Royal Velvet Sofa',
         brand: 'GrandLuxe',
         price: 'Rp 12.500.000',
-        image: 'public/sofa_velvet_1773471916422.png',
-        images: ['public/sofa_velvet_1773471916422.png', 'public/sofa_velvet_1773471916422.png', 'public/sofa_velvet_1773471916422.png'],
+        image: 'assets/sofa_velvet_1773471916422.png',
+        images: ['assets/sofa_velvet_1773471916422.png', 'assets/sofa_velvet_1773471916422.png', 'assets/sofa_velvet_1773471916422.png'],
         description: 'Sofa velvet berwarna biru royal yang memberikan kesan sangat mewah. Sangat empuk dan nyaman untuk bersantai.',
         rating: 4.8,
         stock: 4
@@ -141,8 +141,8 @@ const products = [
         name: 'Modern Gold Chandelier',
         brand: 'CozyLights',
         price: 'Rp 1.140.990',
-        image: 'public/lamp_pendant_1773471934872.png',
-        images: ['public/lamp_pendant_1773471934872.png', 'public/lamp_pendant_1773471934872.png', 'public/lamp_pendant_1773471934872.png'],
+        image: 'assets/lamp_pendant_1773471934872.png',
+        images: ['assets/lamp_pendant_1773471934872.png', 'assets/lamp_pendant_1773471934872.png', 'assets/lamp_pendant_1773471934872.png'],
         description: 'Lampu gantung modern dengan aksen emas. Memberikan pencahayaan yang dramatis dan hangat di ruang makan Anda.',
         rating: 4.7,
         stock: 9
@@ -153,8 +153,8 @@ const products = [
         name: 'Classic Platform Bed',
         brand: 'SleepEZ',
         price: 'Rp 7.500.000',
-        image: 'public/bed_master_1773471947329.png',
-        images: ['public/bed_master_1773471947329.png', 'public/bed_master_1773471947329.png', 'public/bed_master_1773471947329.png'],
+        image: 'assets/bed_master_1773471947329.png',
+        images: ['assets/bed_master_1773471947329.png', 'assets/bed_master_1773471947329.png', 'assets/bed_master_1773471947329.png'],
         description: 'Tempat tidur dengan headboard empuk dan desain minimalis. Memberikan kesan bersih dan tenang di kamar tidur Anda.',
         rating: 4.9,
         stock: 6
@@ -165,8 +165,8 @@ const products = [
         name: 'Floating Wall Shelf',
         brand: 'TitanRack',
         price: 'Rp 1.850.000',
-        image: 'public/shelf_wall_1773471962449.png',
-        images: ['public/shelf_wall_1773471962449.png', 'public/shelf_wall_1773471962449.png', 'public/shelf_wall_1773471962449.png'],
+        image: 'assets/shelf_wall_1773471962449.png',
+        images: ['assets/shelf_wall_1773471962449.png', 'assets/shelf_wall_1773471962449.png', 'assets/shelf_wall_1773471962449.png'],
         description: 'Rak dinding kayu melayang yang sangat minimalis. Cocok untuk menaruh koleksi buku atau tanaman hias kecil.',
         rating: 4.5,
         stock: 20
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Initialize Hero background
     const heroSection = document.querySelector('.hero');
-    heroSection.style.backgroundImage = `url('public/hero_furniture_1773469366766.png')`;
+    heroSection.style.backgroundImage = `url('assets/hero_furniture_1773469366766.png')`;
 
     // 2. Navbar & Mobile Menu Components
     const navbar = document.querySelector('.navbar');
