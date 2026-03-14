@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "public": true,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
+  "name": "cozyliving",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
