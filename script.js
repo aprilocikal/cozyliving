@@ -9,7 +9,7 @@ const products = [
         images: [
             'assets/chair_grandseater_1773469259546.png', 
             'assets/chair_grandseater_angle2_1773476035023.png', 
-            'assets/chair_grandseater_1773469259546.png'
+            'assets/chair_grandseater_angle3_1773579018213.png'
         ],
         description: 'Kursi lounge premium dengan bantal empuk dan rangka kokoh. Didesain secara ergonomis untuk memberikan kenyamanan maksimal setelah hari yang panjang.',
         rating: 4.8,
@@ -25,7 +25,7 @@ const products = [
         images: [
             'assets/cabinet_cabinetpro_1773469275316.png', 
             'assets/cabinet_cabinetpro_angle2_1773476050602.png', 
-            'assets/cabinet_cabinetpro_1773469275316.png'
+            'assets/cabinet_cabinetpro_angle3_1773579033739.png'
         ],
         description: 'Lemari penyimpanan minimalis dengan material kayu premium. Memiliki banyak kompartemen untuk merapikan barang-barang Anda dengan gaya.',
         rating: 4.7,
@@ -41,7 +41,7 @@ const products = [
         images: [
             'assets/table_deskprime_1773469295215.png', 
             'assets/table_deskprime_angle2_1773476069864.png', 
-            'assets/table_deskprime_1773469295215.png'
+            'assets/table_deskprime_angle3_1773579052422.png'
         ],
         description: 'Meja kerja modern dengan fitur kabel management. Luas dan kokoh, sangat cocok untuk mendukung produktivitas kerja Anda di rumah.',
         rating: 4.9,
@@ -57,7 +57,7 @@ const products = [
         images: [
             'assets/shelf_titanrack_1773469312791.png', 
             'assets/shelf_titanrack_angle2_1773476088610.png', 
-            'assets/shelf_titanrack_1773469312791.png'
+            'assets/shelf_titanrack_angle3_1773579070895.png'
         ],
         description: 'Rak modular yang dapat disesuaikan dengan kebutuhan ruang Anda. Terbuat dari metal berdaya tahan tinggi dengan sentuhan akhir industrial.',
         rating: 4.6,
@@ -73,7 +73,7 @@ const products = [
         images: [
             'assets/sofa_grandluxe_1773469329405.png', 
             'assets/sofa_grandluxe_angle2_1773476105227.png', 
-            'assets/sofa_grandluxe_1773469329405.png'
+            'assets/sofa_grandluxe_angle3_1773579087528.png'
         ],
         description: 'Sofa mewah dengan bahan velvet kualitas ekspor. Empuk dan lega, menjadikannya pusat perhatian yang sempurna untuk ruang tamu Anda.',
         rating: 4.8,
@@ -89,7 +89,7 @@ const products = [
         images: [
             'assets/bed_sleepez_1773469346855.png', 
             'assets/bed_sleepez_angle2_new_v2_1773478154229.png', 
-            'assets/bed_sleepez_1773469346855.png'
+            'assets/bed_sleepez_angle3_1773579105410.png'
         ],
         description: 'Rangka tempat tidur berbahan kayu solid yang dirancang untuk stabilitas maksimal. Memberikan dukungan sempurna untuk tidur yang lebih nyenyak.',
         rating: 4.9,
@@ -105,7 +105,7 @@ const products = [
         images: [
             'assets/chair_luxe_1773471881677.png', 
             'assets/chair_nordic_angle2_1773477226019.png', 
-            'assets/chair_luxe_1773471881677.png'
+            'assets/chair_nordic_angle2_1773477226019.png'
         ],
         description: 'Kursi aksen dengan desain Nordic yang elegan. Material kulit sintetis premium dengan kaki kayu solid yang kokoh.',
         rating: 5.0,
@@ -118,7 +118,7 @@ const products = [
         brand: 'DeskPrime',
         price: 'Rp 6.800.000',
         image: 'assets/table_marble_1773471897546.png',
-        images: ['assets/table_marble_1773471897546.png', 'assets/table_marble_1773471897546.png', 'assets/table_marble_1773471897546.png'],
+        images: ['assets/table_marble_1773471897546.png', 'assets/table_marble_angle2_1773578832219.png', 'assets/table_marble_angle3_1773578922717.png'],
         description: 'Meja makan mewah dengan permukaan marmer asli. Desain bundar yang memberikan kesan hangat dan akrab saat berkumpul.',
         rating: 4.9,
         stock: 2
@@ -130,7 +130,7 @@ const products = [
         brand: 'GrandLuxe',
         price: 'Rp 12.500.000',
         image: 'assets/sofa_velvet_1773471916422.png',
-        images: ['assets/sofa_velvet_1773471916422.png', 'assets/sofa_velvet_1773471916422.png', 'assets/sofa_velvet_1773471916422.png'],
+        images: ['assets/sofa_velvet_1773471916422.png', 'assets/sofa_velvet_angle2_1773578849693.png', 'assets/sofa_velvet_angle3_1773578939554.png'],
         description: 'Sofa velvet berwarna biru royal yang memberikan kesan sangat mewah. Sangat empuk dan nyaman untuk bersantai.',
         rating: 4.8,
         stock: 4
@@ -142,7 +142,7 @@ const products = [
         brand: 'CozyLights',
         price: 'Rp 1.140.990',
         image: 'assets/lamp_pendant_1773471934872.png',
-        images: ['assets/lamp_pendant_1773471934872.png', 'assets/lamp_pendant_1773471934872.png', 'assets/lamp_pendant_1773471934872.png'],
+        images: ['assets/lamp_pendant_1773471934872.png', 'assets/lamp_pendant_angle2_1773578864830.png', 'assets/lamp_pendant_angle3_1773578954913.png'],
         description: 'Lampu gantung modern dengan aksen emas. Memberikan pencahayaan yang dramatis dan hangat di ruang makan Anda.',
         rating: 4.7,
         stock: 9
@@ -154,7 +154,7 @@ const products = [
         brand: 'SleepEZ',
         price: 'Rp 7.500.000',
         image: 'assets/bed_master_1773471947329.png',
-        images: ['assets/bed_master_1773471947329.png', 'assets/bed_master_1773471947329.png', 'assets/bed_master_1773471947329.png'],
+        images: ['assets/bed_master_1773471947329.png', 'assets/bed_master_angle2_1773578882865.png', 'assets/bed_master_angle3_1773578974179.png'],
         description: 'Tempat tidur dengan headboard empuk dan desain minimalis. Memberikan kesan bersih dan tenang di kamar tidur Anda.',
         rating: 4.9,
         stock: 6
@@ -166,7 +166,7 @@ const products = [
         brand: 'TitanRack',
         price: 'Rp 1.850.000',
         image: 'assets/shelf_wall_1773471962449.png',
-        images: ['assets/shelf_wall_1773471962449.png', 'assets/shelf_wall_1773471962449.png', 'assets/shelf_wall_1773471962449.png'],
+        images: ['assets/shelf_wall_1773471962449.png', 'assets/shelf_wall_angle2_1773578899586.png', 'assets/shelf_wall_angle3_1773578989056.png'],
         description: 'Rak dinding kayu melayang yang sangat minimalis. Cocok untuk menaruh koleksi buku atau tanaman hias kecil.',
         rating: 4.5,
         stock: 20
@@ -294,7 +294,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon: 'warning',
                 title: 'Keranjang Kosong',
                 text: 'Silakan pilih produk terlebih dahulu.',
-                confirmButtonColor: '#86d9f7'
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#70B9EB',
+                customClass: { confirmButton: 'custom-swal-button' }
             });
             return;
         }
@@ -411,6 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const waLink = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(waMessage)}`;
 
                 Swal.fire({
+                    icon: 'success',
                     title: 'Pesanan Berhasil!',
                     html: `
                         <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><b>Langkah kirim struk ke WA:</b></p>
@@ -497,32 +500,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateCartUI();
-        
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true
-        });
-
-        Toast.fire({
+        Swal.fire({
             icon: 'success',
-            title: `${product.name} telah ditambahkan`,
-            background: '#ffffff',
-            color: '#1A1A1A',
-            iconColor: '#D4AF37'
+            title: 'Berhasil',
+            text: `${product.name} telah ditambahkan`,
+            showConfirmButton: true,
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#70B9EB',
+            timer: 2000,
+            customClass: { confirmButton: 'custom-swal-button' }
         });
     };
 
     window.updateQuantity = (productId, change) => {
         const item = cart.find(i => i.id === productId);
         if (item) {
-            item.quantity += change;
-            if (item.quantity <= 0) {
-                cart = cart.filter(i => i.id !== productId);
+            const newQuantity = item.quantity + change;
+            
+            if (newQuantity <= 0) {
+                // Konfirmasi Sebelum Menghapus
+                Swal.fire({
+                    title: 'Hapus Produk?',
+                    text: `Apakah Anda yakin ingin menghapus ${item.name} dari keranjang?`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#ff4d4d',
+                    cancelButtonColor: '#1A1A1A',
+                    confirmButtonText: 'Ya, Hapus',
+                    cancelButtonText: 'Batal',
+                    customClass: {
+                        confirmButton: 'custom-swal-button',
+                        cancelButton: 'custom-swal-button'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        cart = cart.filter(i => i.id !== productId);
+                        updateCartUI();
+                        
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Produk dihapus',
+                            showConfirmButton: true,
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: '#70B9EB',
+                            timer: 1500,
+                            customClass: { confirmButton: 'custom-swal-button' }
+                        });
+                    }
+                });
+            } else {
+                item.quantity = newQuantity;
+                updateCartUI();
             }
-            updateCartUI();
         }
     };
 
@@ -615,7 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Gallery Thumbs
         const thumbGrid = document.getElementById('detailThumbs');
         thumbGrid.innerHTML = product.images.map((img, idx) => `
-            <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="changeDetailImg(this, '${img}')">
+            <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="changeDetailImg(this, '${img}', ${idx})">
                 <img src="${img}" alt="Thumb">
             </div>
         `).join('');
