@@ -400,30 +400,27 @@ document.addEventListener('DOMContentLoaded', () => {
             receiptTemplate.style.left = '0'; // Show temporarily for capture
             receiptTemplate.style.top = '0';
 
-            html2canvas(target).then(canvas => {
+            html2canvas(target, { scale: 2, useCORS: true }).then(async canvas => {
                 const imgData = canvas.toDataURL('image/png');
                 receiptTemplate.style.left = '-9999px'; // Hide again
 
-                // Format WhatsApp Message
+                // Format phone number
                 let formattedPhone = phone;
                 if (formattedPhone.startsWith('0')) formattedPhone = '62' + formattedPhone.slice(1);
                 else if (!formattedPhone.startsWith('62')) formattedPhone = '62' + formattedPhone;
 
-                const waMessage = `*STRUK PESANAN COZYLIVING*\n\nHalo ${name}!\nStruk belanja Anda sudah siap. \n\nID: ${trxId}\nTotal: ${finalTotal}\n\nTerima kasih!`;
-                const waLink = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(waMessage)}`;
+                // Convert canvas to File for sharing
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                const receiptFile = new File([blob], `Struk-CozyLiving-${trxId}.png`, { type: 'image/png' });
 
                 Swal.fire({
                     icon: 'success',
                     title: 'Pesanan Berhasil!',
                     html: `
-                        <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><b>Langkah kirim struk ke WA:</b></p>
-                        <ol style="font-size: 13px; text-align: left; color: #555; margin-bottom: 15px;">
-                            <li>Klik <b>Simpan Struk</b> di bawah</li>
-                            <li>Klik <b>Kirim ke WhatsApp</b></li>
-                            <li>Lalu <b>Lampirkan/Paste</b> foto struk tadi di chat</li>
-                        </ol>
                         <img src="${imgData}" class="receipt-preview">
-                        <br>
+                        <p style="font-size: 13px; color: #888; margin-top: 10px;">
+                            Klik <b>Kirim ke WhatsApp</b> untuk mengirim struk sebagai 1 gambar.
+                        </p>
                         <a href="${imgData}" download="Struk-CozyLiving-${trxId}.png" class="swal2-confirm swal2-styled custom-swal-button" style="text-decoration:none; display:inline-block; background-color:#86d9f7; color:white; margin-top:10px;">
                             <i class="fas fa-download"></i> Simpan Struk (Foto)
                         </a>
@@ -437,9 +434,40 @@ document.addEventListener('DOMContentLoaded', () => {
                         confirmButton: 'custom-swal-button', 
                         cancelButton: 'custom-swal-button' 
                     }
-                }).then((result) => {
+                }).then(async (result) => {
                     if (result.isConfirmed) {
-                        window.open(waLink, '_blank');
+                        const canShare = navigator.canShare && navigator.canShare({ files: [receiptFile] });
+                        
+                        if (canShare) {
+                            try {
+                                // Share ONLY the image file — no text — so WhatsApp sends 1 bubble
+                                await navigator.share({
+                                    files: [receiptFile]
+                                });
+                            } catch (err) {
+                                if (err.name !== 'AbortError') {
+                                    const dl = document.createElement('a');
+                                    dl.href = imgData;
+                                    dl.download = `Struk-CozyLiving-${trxId}.png`;
+                                    dl.click();
+                                }
+                            }
+                        } else {
+                            // Desktop fallback: auto-download the receipt image
+                            const dl = document.createElement('a');
+                            dl.href = imgData;
+                            dl.download = `Struk-CozyLiving-${trxId}.png`;
+                            dl.click();
+                            
+                            Swal.fire({
+                                icon: 'info',
+                                title: 'Struk Tersimpan!',
+                                text: 'Buka WhatsApp dan kirim foto struk yang sudah di-download.',
+                                confirmButtonColor: '#25D366',
+                                confirmButtonText: 'OK',
+                                customClass: { confirmButton: 'custom-swal-button' }
+                            });
+                        }
                     }
                     checkoutForm.reset();
                 });
