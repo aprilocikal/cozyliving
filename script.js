@@ -48,22 +48,6 @@ const products = [
         stock: 8
     },
     {
-        id: 4,
-        category: 'rak',
-        name: 'TitanRack Modular',
-        brand: 'TitanRack',
-        price: 'Rp 2.803.970',
-        image: 'assets/shelf_titanrack_1773469312791.png',
-        images: [
-            'assets/shelf_titanrack_1773469312791.png', 
-            'assets/shelf_titanrack_angle2_1773476088610.png', 
-            'assets/shelf_titanrack_angle3_1773579070895.png'
-        ],
-        description: 'Rak modular yang dapat disesuaikan dengan kebutuhan ruang Anda. Terbuat dari metal berdaya tahan tinggi dengan sentuhan akhir industrial.',
-        rating: 4.6,
-        stock: 15
-    },
-    {
         id: 5,
         category: 'sofa',
         name: 'GrandLuxe Sectional',
